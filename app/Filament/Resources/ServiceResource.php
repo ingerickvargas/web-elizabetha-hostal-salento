@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,7 +24,9 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                //
+				Forms\Components\TextInput::make('title')->label('Título'),
+				Forms\Components\TextArea::make('description')->label('Descripción'),
+                Forms\Components\FileUpload::make('image')->image()->required()->directory('services')->label('Imagen'),
             ]);
     }
 
@@ -31,7 +34,9 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                //
+            	Tables\Columns\TextColumn::make('title')->label('Título'),
+            	Tables\Columns\TextColumn::make('description')->label('Descripción'),
+                ImageColumn::make('image')->label('Imagen'),
             ])
             ->filters([
                 //

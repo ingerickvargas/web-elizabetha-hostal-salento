@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,7 +24,8 @@ class GalleryResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\FileUpload::make('image')->image()->required()->directory('gallery')->label('Imagen'),
+				Forms\Components\TextInput::make('title')->label('Título'),
             ]);
     }
 
@@ -31,7 +33,8 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                ImageColumn::make('image')->label('Imagen'),
+            	Tables\Columns\TextColumn::make('title')->label('Título'),
             ])
             ->filters([
                 //

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Gallery;
 use App\Http\Controllers\WebController;
 
 Route::get('/', [WebController::class, 'home'])->name('home');
