@@ -46,9 +46,8 @@ class User extends Authenticatable
         ];
     }
 
-	public function canAccessPanel(\Filament\Panel $panel): bool
-	{
-    	return true; // Permitir acceso a todos los usuarios por ahora
-	}
-
+    public function canAccessPanel(\Filament\Panel $panel): bool
+    {
+        return true; // Permitir acceso a todos los usuarios por ahora
+    }
 }

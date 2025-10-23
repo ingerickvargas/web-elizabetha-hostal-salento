@@ -27,8 +27,11 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+			->brandName('Elizabetha Hostal')
+            ->brandLogo(asset('storage/home/logo_header.png'))
+            ->favicon(asset('storage/home/favicon.ico'))
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::hex('#14532D'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

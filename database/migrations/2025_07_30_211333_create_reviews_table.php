@@ -6,25 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('reviews', function (Blueprint $table) {
-           $table->id();
-			$table->string('name'); // Nombre del cliente
-			$table->string('comment'); // Reseña
-			$table->unsignedTinyInteger('rating')->default(5); // Calificación 1-5
+	public function up(): void
+	{
+		Schema::create('reviews', function (Blueprint $table) {
+			$table->id();
+			$table->string('name');
+			$table->string('comment');
+			$table->unsignedTinyInteger('rating')->default(5);
 			$table->timestamps();
-        });
-    }
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('reviews');
-    }
+	public function down(): void
+	{
+		Schema::dropIfExists('reviews');
+	}
 };

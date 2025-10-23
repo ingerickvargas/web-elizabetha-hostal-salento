@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 @import 'glightbox/dist/css/glightbox.css';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -9,4 +11,22 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.hero-title {
+    font-size: 4rem; /* Ajusta según tu diseño */
+    font-weight: bold;
+    color: white; /* Para que contraste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* sombra */
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+.hero-navbar {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 1px rgb(0, 0, 0); /* borde negro */
 }

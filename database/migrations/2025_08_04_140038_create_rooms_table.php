@@ -6,21 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
 	public function up(): void
 	{
-		Schema::create('services', function (Blueprint $table) {
+		Schema::create('rooms', function (Blueprint $table) {
 			$table->id();
-			$table->string('title');
+			$table->string('name');
 			$table->text('description');
-			$table->string('image')->nullable();
+			$table->decimal('price', 10, 2);
+			$table->string('image');
+			$table->boolean('is_featured')->default(false);
 			$table->timestamps();
 		});
 	}
 
-
 	public function down(): void
 	{
-		Schema::dropIfExists('services');
+		Schema::dropIfExists('rooms');
 	}
 };
